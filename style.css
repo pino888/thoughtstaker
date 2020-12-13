@@ -12,9 +12,8 @@
 body {
     display: flex;
     align-items: center;
-    justify-content: center;
     flex-direction: column;
-    height: 100vh;
+    max-height: 100vh;
     background-color: #5f7daf;
     background-image: url('./resources/triangles.png');
     padding: 10px;

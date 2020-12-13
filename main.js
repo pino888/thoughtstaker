@@ -28,6 +28,15 @@ if (newestDiv != null) {
     currentDiv = document.getElementById(`div${numberOfEntries}`);
 }
 
+
+setInterval(() => {
+    if(input === document.activeElement && window.matchMedia("(max-width: 768px)").matches){
+        log.style.display = 'none';
+    }else{
+        log.style.display = 'block';
+    }
+}, 500)
+
 addStrikeButton();
 
 function addElement () { 
@@ -63,7 +72,7 @@ function addElement () {
     staticDiv.appendChild(newSpan);
     newDiv.appendChild(newContent);
     input.value = '';
-    input.focus();
+    //input.focus();
   
     // add the newly created element and its content with button into the DOM 
     log.insertBefore(newDiv, currentDiv);
@@ -79,7 +88,7 @@ function saveState() {
 }
 
 addZero = (time) => {
-    if(time<10) {
+    if(time < 10) {
         time = "0" + time;
     }
     return time;
@@ -91,6 +100,7 @@ returnKey = (event) => {
     var x = event.which || event.keyCode;
     if (x == 13) {
         button.onmouseup();
+        input.blur();
     }
 }
 
