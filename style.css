@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: RussoOne;
+    src: url(./resources/RussoOne-Regular.ttf);
+  }
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #5f7daf;
+    background-image: url('./resources/triangles.png');
+    padding: 10px;
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 30%;
+    background-color: rgba(175,175,199,0.93);
+    border-radius: 0px 15px 15px 15px;
+    border: 2px solid #e2c3c8;
+    box-shadow: 2px 2px 2px;
+    padding: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    align-items: center;
+    font-family: 'RussoOne', sans-serif;
+}
+
+#input-field {
+    font-size: 1.5rem;
+    border: #e2c3c8 solid 2px;
+    border-radius: 0px 7px 7px 7px;
+    padding-left: 5px;
+    margin: 10px;
+}
+
+#save {
+    border: #e2c3c8 solid 3px;
+    background-color: #5f7daf;
+    font-family: 'RussoOne';
+    border-radius: 0px 7px 7px 7px;
+    font-size: 1.5rem;
+    width: 40%;
+    padding: 2px;
+    cursor: pointer;
+}
+
+#save:active, img:active {
+    background-color: rgba(175,175,199,0.93);
+}
+
+.log {
+    height: 70%;
+    background-color: rgba(175,175,199,0.93);
+    border-radius: 0px 15px 15px 15px;
+    border: 2px solid #e2c3c8;
+    box-shadow: 2px 2px 2px;
+    padding: 10px;
+    overflow: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+.log::-webkit-scrollbar {
+    display: none;
+}
+
+.entry {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border-radius: 0px 15px 15px 15px;
+    padding: 10px;
+    margin: 5px;
+    box-shadow: 3px 3px 3px;
+}
+
+.static {
+    display: flex;
+    margin: 5px;
+}
+
+span {
+    margin: 5px;
+    font-size: 0.8rem;
+    color: grey;
+}
+
+img {
+    width: 24px;
+    border: 1px solid black;
+    border-radius: 0px 4px 4px 4px;
+    cursor: pointer;
+}
