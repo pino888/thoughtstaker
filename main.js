@@ -6,6 +6,7 @@ let log = document.querySelector('.log');
 let currentDiv = document.getElementById("div0");
 const firstDateStamp = document.getElementById("date-stamp-0");
 let strike = document.querySelectorAll(".strike");
+let copy = document.querySelectorAll(".copy");
 const firstDate = new Date();
 firstDateStamp.innerHTML = firstDate;
 let numberOfEntries = 0;
@@ -38,6 +39,7 @@ setInterval(() => {
 }, 500)
 
 addStrikeButton();
+addCopyButton();
 
 function addElement () { 
     const now = new Date();
@@ -65,19 +67,24 @@ function addElement () {
     const newStrike = document.createElement("img");
     newStrike.classList.add("strike");
     newStrike.src = './resources/scribble.png';
+    const newCopy = document.createElement("img");
+    newCopy.classList.add("copy");
+    newCopy.src = './resources/clipboard.png';
     
     // add the text node, date stamp and button to the newly created div
     newDiv.appendChild(staticDiv);
     staticDiv.appendChild(newStrike);
+    staticDiv.appendChild(newCopy);
     staticDiv.appendChild(newSpan);
     newDiv.appendChild(newContent);
     input.value = '';
     //input.focus();
   
-    // add the newly created element and its content with button into the DOM 
+    // add the newly created element and its content with buttons into the DOM 
     log.insertBefore(newDiv, currentDiv);
     currentDiv = document.getElementById(newDiv.id);
     addStrikeButton();
+    addCopyButton();
 
     saveState();
 }
@@ -122,3 +129,15 @@ function strikeThrough() {
         saveState();
     }
 }
+
+function addCopyButton() {
+    copy = document.querySelectorAll(".copy");
+    for (i = 0; i < copy.length; i++){
+        copy[i].onmouseup = copyEntry;
+    }
+}
+
+function copyEntry() {
+    const copyText = this.parentElement.nextSibling.textContent;
+    navigator.clipboard.writeText(copyText);
+  }
